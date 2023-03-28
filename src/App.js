@@ -1,10 +1,10 @@
 import './App.css';
-import Form from './components/Form';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <LoginPage />
     </div>
   );
 }

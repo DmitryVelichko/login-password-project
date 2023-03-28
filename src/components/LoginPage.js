@@ -1,29 +1,16 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.svg';
 import InputMask from 'react-input-mask';
-import './form.css';
+import { database, errors } from './data.js'
+import './loginPage.css';
 
-export default function Form() {
+export default function LoginPage() {
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isError, setIsError] = useState(true);
     const [isModal, setIsModal] = useState(false);
 
-    const database = [
-        {
-            username: "+7 111 111 11 11",
-            password: "123456"
-        }
-    ];
-    const errors = {
-        uname: "Неправильный логин",
-        pass: "Неправильный пароль"
-    };
-
-    const handleClick = () => {
-        setIsError(true)
-    }
 
     const handleSubmit = (event) => {
 
@@ -48,6 +35,9 @@ export default function Form() {
         }
     };
 
+    const handleClick = () => {
+        setIsError(true)
+    }
 
     const handleGoBack = () => {
         setIsSubmitted(false)
@@ -56,7 +46,15 @@ export default function Form() {
 
     const handleForgotPassword = () => {
         setIsModal(!isModal)
-      
+
+    }
+
+    const handleOnKeyDown = (event) => {
+        if (event.keyCode === 13) {
+
+            handleClick()
+            handleSubmit(event)
+        }
     }
 
     // Ошибки при валидации
@@ -73,10 +71,10 @@ export default function Form() {
                     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
                         <img src={logo} alt="company logo" className='logo' />
 
-                        <InputMask type="text" name="uname" className='input' placeholder='Введите логин' mask='+7 999 999 99 99' required></InputMask>
+                        <InputMask type="text" name="uname" className='input' placeholder='Введите логин' mask='+7 999 999 99 99' required onKeyDown={(e) => handleOnKeyDown(e)} ></InputMask>
                         {isError && renderErrorMessage("uname")}
 
-                        <InputMask type="password" name='pass' className='input' placeholder='Введите пароль' required></InputMask>
+                        <InputMask type="password" name='pass' className='input' placeholder='Введите пароль' required onKeyDown={(e) => handleOnKeyDown(e)}></InputMask>
                         {isError && renderErrorMessage("pass")}
 
                         <button className='forgotPass' onClick={handleForgotPassword}>Забыли пароль?</button>
