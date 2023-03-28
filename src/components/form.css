@@ -1,0 +1,25 @@
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.backBtn {
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 0.9em 1em;
+  margin-top: 14px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    z-index: 1000;
+}

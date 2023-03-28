@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* > * {
+  font-family: 'Poppins', cursive;
+  margin: 0;
+}
+
+body {
+  background-image: url(fon.svg);
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register {
+  max-width: 500px;
+  width: 500px;
+  display: flex;
+  border: 1px solid #e9ecef;
+  border-radius: 25px;
+  /* box-shadow: 1px 3px 10px #e9ecef; */
+  background-color: white;
+  height: 600px;
+}
+
+.register span {
+  color: #adb5bd;
+}
+
+.forgotPass {
+  display: flex;
+  justify-content: end;
+  color: #f6b52e;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#form {
+  max-width: 340px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
+.input,
+.btn {
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 0.9em 1em;
+}
+
+.input::placeholder {
+   color: #989898;;
+}
+
+#form > .input:focus {
+  outline: none;
+}
+
+#form > .btn {
+  background-color: #f2b705;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  gap: 1em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.register .col-1 {
+  margin: auto;
+  padding: 3em 0;
+}
+
+@media screen and (min-width: 860px) {
+  .register .col-2 img {
+    display: initial;
+  }
+}
